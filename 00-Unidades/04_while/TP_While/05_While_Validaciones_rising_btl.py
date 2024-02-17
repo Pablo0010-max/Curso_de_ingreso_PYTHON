@@ -62,3 +62,12 @@ if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
     app.mainloop()
+
+
+
+
+    '''
+    self.txt_tipo = customtkinter.CTkEntry(master=self)
+        self.txt_tipo.grid(row=2, column=1, padx=20, pady=10)
+    
+    '''

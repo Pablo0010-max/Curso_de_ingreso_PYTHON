@@ -34,7 +34,17 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, padx=30, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        importe = self.txt_importe.get()
+
+        importe_entero = int(importe)
+
+        resultado_porcentaje = importe_entero * 20 / 100
+
+        resultado = importe_entero - resultado_porcentaje
+
+        mensaje = f"Su importe es de: {resultado}"
+
+        alert("Titulo", mensaje)
 
 
 if __name__ == "__main__":

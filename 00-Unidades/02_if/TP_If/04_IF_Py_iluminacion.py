@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Pablo 
+apellido: Franco
 ---
 TP: IF_Iluminacion
 ---
@@ -43,10 +43,62 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get()) #parseo
+
+        total = cantidad * 800
         
-    
+        
+        if cantidad > 5:
+            descuento = total * 50 / 100
+            precio = total - descuento
+            print(precio)
+            
+        elif marca == "ArgentinaLuz" and cantidad == 5:
+            descuento = total * 40 / 100
+            precio = total - descuento
+            print(precio)
+        elif marca != "ArgentinaLuz" and cantidad == 5:
+            descuento = total * 30 / 100
+            precio = total - descuento
+            print(precio)
+        elif (marca == "ArgentinaLuz" or marca == "FelipeLamparas") and cantidad == 4:
+            descuento = total * 25 / 100
+            precio = total - descuento
+            print(precio)
+        elif (marca != "ArgentinaLuz" or marca != "FelipeLamparas") and cantidad == 4: 
+            descuento = total * 20 / 100
+            precio = total - descuento
+            print(precio)
+        elif marca == "ArgentinaLuz" and cantidad == 3:
+            descuento = total * 15 / 100
+            precio = total - descuento
+            print(precio)
+        elif marca == "FelipeLamparas" and cantidad == 3:
+            descuento = total * 10 / 100
+            precio = total - descuento
+            print(precio)
+        elif (marca != "ArgentinaLuz" or marca != "FelipaLamparas") and cantidad == 3:
+            descuento = total * 5 / 100
+            precio = total - descuento
+            print(precio)
+        elif precio > 4000:
+            descuento = total * 5 / 100
+        
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
     app.mainloop()
+
+
+    #Entradas: cantidad, marca
+
+    #Procesos: 1.Calculamos el precio sin descuento(cantidad*800)
+    #2. Averiguar cual es el descuento q tengo que aplicar (segun cantidad y marca)
+    #3. Aplicar el descuento 
+    #4. Verificar y aplicar descuento extra
+
+    #Salidas: preco con descuentos
+
+    #

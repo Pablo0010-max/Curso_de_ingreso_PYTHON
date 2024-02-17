@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Pablo
+apellido: Franco
 ---
 TP: ES_Facturaciones
 ---
@@ -52,13 +52,60 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
+        resultado_1 = self.txt_importe_1.get()
+        resultado_2 = self.txt_importe_2.get()
+        resultado_3 = self.txt_importe_3.get()
+
+        valor_1 = int(resultado_1)
+        valor_2 = int(resultado_2)
+        valor_3 = int(resultado_3)
+
+        resultado = valor_1 + valor_2 + valor_3
+
+        resultado_texto = str(resultado)
+
+        mensaje = "El valor total es de: " + resultado_texto
+
+        alert("Tp01", mensaje )
 
     def btn_promedio_on_click(self):
-        pass
+        resultado_1 = self.txt_importe_1.get()
+        resultado_2 = self.txt_importe_2.get()
+        resultado_3 = self.txt_importe_3.get()
+
+        valor_1 = int(resultado_1)
+        valor_2 = int(resultado_2)
+        valor_3 = int(resultado_3)
+
+        suma = (valor_1 + valor_2 + valor_3) / 3 
+
+        resultado_texto = str(suma)
+
+        mensaje = "El promedio es de: " + resultado_texto
+
+        alert("Tp01", mensaje )
+
 
     def btn_total_iva_on_click(self):
-        pass      
+        resultado_1 = self.txt_importe_1.get()
+        resultado_2 = self.txt_importe_2.get()
+        resultado_3 = self.txt_importe_3.get()
+
+        valor_1 = int(resultado_1)
+        valor_2 = int(resultado_2)
+        valor_3 = int(resultado_3)
+
+        suma = (valor_1 + valor_2 + valor_3) 
+
+        porcentaje = suma * 21 / 100
+
+        resultado_suma = suma + porcentaje
+
+        resultado_texto = str(resultado_suma)
+
+        mensaje = "El valor total es de: " + resultado_texto
+
+        alert("Tp01", mensaje )     
     
 if __name__ == "__main__":
     app = App()

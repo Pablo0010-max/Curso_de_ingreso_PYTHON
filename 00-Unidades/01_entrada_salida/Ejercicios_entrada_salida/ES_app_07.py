@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Pablo
+apellido: Franco
 ---
 Ejercicio: entrada_salida_07
 ---
@@ -49,16 +49,65 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        pass
+        resultado_a = self.txt_operador_a.get()
+        resultado_b = self.txt_operador_b.get()
+
+        resultado_a_numero = int(resultado_a)
+        resultado_b_numero = int(resultado_b)
+
+        resultado = resultado_a_numero + resultado_b_numero
+
+        resultado_mensaje = str(resultado)
+
+        mensaje = "El resultado de la suma es: " + resultado_mensaje
+
+        alert("titulo", mensaje)
 
     def btn_restar_on_click(self):
-        pass
+        resultado_a = self.txt_operador_a.get()
+        resultado_b = self.txt_operador_b.get()
+
+        resultado_a_numero = int(resultado_a)
+        resultado_b_numero = int(resultado_b)
+
+        resultado = resultado_a_numero - resultado_b_numero
+
+        resultado_mensaje = str(resultado)
+
+        mensaje = "El resultado de la resta es: " + resultado_mensaje
+
+        alert("titulo", mensaje)
 
     def btn_multiplicar_on_click(self):
-        pass
+        resultado_a = self.txt_operador_a.get()
+        resultado_b = self.txt_operador_b.get()
+
+        resultado_a_numero = int(resultado_a)
+        resultado_b_numero = int(resultado_b)
+
+        resultado = resultado_a_numero * resultado_b_numero
+
+        resultado_mensaje = str(resultado)
+
+        mensaje = "El resultado de la multiplicacion es: " + resultado_mensaje
+
+        alert("titulo", mensaje)
+
 
     def btn_dividir_on_click(self):
-        pass
+        resultado_a = self.txt_operador_a.get()
+        resultado_b = self.txt_operador_b.get()
+
+        resultado_a_numero = int(resultado_a)
+        resultado_b_numero = int(resultado_b)
+
+        resultado = resultado_a_numero / resultado_b_numero
+
+        resultado_mensaje = str(resultado)
+
+        mensaje = "El resultado de la division es: " + resultado_mensaje
+
+        alert("titulo", mensaje)
         
 if __name__ == "__main__":
     app = App()

@@ -27,7 +27,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        if 1 <= 10:
+            alert("","")
         
 
 if __name__ == "__main__":
